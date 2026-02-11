@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanglish Sentiment & Emotion Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-brain-circuit"></i>
+                <h1>Sentimind <span>AI</span></h1>
+            </div>
+            <p class="subtitle">Hybrid XLM-R & IndicBERT Multi-Task Analyzer</p>
+        </header>
+
+        <section class="analysis-card">
+            <div class="input-group">
+                <textarea id="text-input" placeholder="Enter Tanglish text to analyze... (e.g., 'Trailer late ah parthavanga like podunga')"></textarea>
+                <div class="actions">
+                    <button id="analyze-btn" class="primary-btn">
+                        <i class="fas fa-bolt"></i> Analyze Text
+                    </button>
+                    <button id="train-btn" class="secondary-btn">
+                        <i class="fas fa-sync-alt"></i> Train Model
+                    </button>
+                </div>
+            </div>
+
+            <div id="status-display" class="status-box hidden">
+                <i class="fas fa-info-circle"></i>
+                <span id="status-text">Idle</span>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card sentiment-card">
+                    <div class="card-header">
+                        <i class="fas fa-smile"></i>
+                        <h3>Sentiment</h3>
+                    </div>
+                    <div class="value" id="sentiment-value">--</div>
+                    <div class="confidence-bar">
+                        <div class="bar-fill" id="sentiment-conf-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="confidence-text" id="sentiment-conf-text">Confidence: 0.00%</div>
+                </div>
+
+                <div class="result-card emotion-card">
+                    <div class="card-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Emotion</h3>
+                    </div>
+                    <div class="value" id="emotion-value">--</div>
+                    <div class="confidence-bar">
+                        <div class="bar-fill" id="emotion-conf-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="confidence-text" id="emotion-conf-text">Confidence: 0.00%</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="tech-tag"><i class="fas fa-microchip"></i> XLM-RoBERTa</div>
+            <div class="tech-tag"><i class="fas fa-language"></i> IndicBERT</div>
+            <div class="tech-tag"><i class="fas fa-project-diagram"></i> CNN + LSTM</div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
