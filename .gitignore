@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Models - Ignore large files (>100MB)
+*.keras
+*.h5
+*.hdf5
+# We keep the small pickle files for simple models
+
+# Environment
+.env
+.venv
+venv/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
